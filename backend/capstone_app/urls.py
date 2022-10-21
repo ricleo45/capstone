@@ -1,6 +1,7 @@
 from django.urls import path
-from . import views
+from capstone_app import views
 
 urlpatterns = [
-    path('', views.customer_list),
+    path('list', views.customer_list),
+    path('add', views.add_new_customer)
 ]
