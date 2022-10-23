@@ -1,4 +1,4 @@
-from rest_framework import status
+
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
@@ -28,7 +28,8 @@ def add_new_customer(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'GET':
-        cars = CustomerInfo.objects.filter(user_id=request.user.id)
-        serializer = CustomerInfoSerializer(cars, many=True)
+        customer = CustomerInfo.objects.filter(user_id=request.user.id)
+        serializer = CustomerInfoSerializer(customer, many=True)
         return Response(serializer.data)
+    
 
