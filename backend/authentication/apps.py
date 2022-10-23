@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class CapstoneAppConfig(AppConfig):
+class AuthenticationConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'capstone_app'
+    name = 'authentication'

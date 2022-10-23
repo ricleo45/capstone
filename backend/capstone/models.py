@@ -1,6 +1,8 @@
 from django.db import models
+from authentication.models import User
 
 class CustomerInfo(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     email = models.CharField(max_length=255)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
@@ -12,7 +14,6 @@ class CustomerInfo(models.Model):
     transaction_id = models.IntegerField()
 
 # class LogisticsInfo(models.Model):
-#     transaction_id = models.IntegerField()
 #     inventory_add = models.CharField(max_length=255)
 #     inventory_remove = models.CharField(max_length=255)
 
