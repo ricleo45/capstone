@@ -31,5 +31,7 @@ def add_new_customer(request):
         customer = CustomerInfo.objects.filter(user_id=request.user.id)
         serializer = CustomerInfoSerializer(customer, many=True)
         return Response(serializer.data)
+
     
+
 

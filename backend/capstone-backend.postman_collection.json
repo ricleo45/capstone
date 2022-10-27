@@ -150,19 +150,19 @@
 			"response": []
 		},
 		{
-			"name": "create_new_customer_secured",
+			"name": "add_services_to_customer_secured",
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer ",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY3NjkzMjM0LCJpYXQiOjE2NjY4MjkyMzQsImp0aSI6ImY1NzhhOTg3YTI5ZTQxYzU5ZDk4NTkyNTUwYzMwMmRkIiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJyaWNsZW8iLCJmaXJzdF9uYW1lIjoiUmljYXJkbyJ9.H0pVj56OcEOCNcp-6GEuGXN0IJwtqduyfX9JBMQcBoY",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"abcd@abc.com\",\r\n    \"first_name\": \"abc\",\r\n    \"last_name\": \"defg\",\r\n    \"payment_ammount\":234.56,\r\n    \"phone_number\":1234567890,\r\n    \"service_type\":\"lashes\",\r\n    \"schedule_date\":1131998,\r\n    \"payment_form\":\"venmo\",\r\n    \"transaction_id\":98735609\r\n}",
+					"raw": "{\r\n    \"payment_ammount\":234.56,\r\n    \"phone_number\":1234567890,\r\n    \"service_type\":\"lashes\",\r\n    \"schedule_date\":1131998,\r\n    \"payment_form\":\"venmo\",\r\n    \"transaction_id\":98735609,\r\n    \"inventory\":\"soap\",\r\n    \"payment_sum\": 1.00\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -170,7 +170,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/add",
+					"raw": "http://127.0.0.1:8000/api/core",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -181,12 +181,12 @@
 					"port": "8000",
 					"path": [
 						"api",
-						"add"
+						"core"
 					],
 					"query": [
 						{
 							"key": "Authorization",
-							"value": "Bearer ",
+							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY3MzYyMzA3LCJpYXQiOjE2NjY0OTgzMDcsImp0aSI6ImZkZTM1OWRhZTc1OTQyNjg5YzAzOTY0NTQxYmY4MmJlIiwidXNlcl9pZCI6MywidXNlcm5hbWUiOiJyaWNsZW8iLCJmaXJzdF9uYW1lIjoiUmljYXJkbyJ9.C4S8fblTyitVDShJ5u6Bb5YqT12r23s46f0bFQPSXYs",
 							"disabled": true
 						}
 					]
@@ -204,19 +204,21 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer ",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY3NjkzMjM0LCJpYXQiOjE2NjY4MjkyMzQsImp0aSI6ImY1NzhhOTg3YTI5ZTQxYzU5ZDk4NTkyNTUwYzMwMmRkIiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJyaWNsZW8iLCJmaXJzdF9uYW1lIjoiUmljYXJkbyJ9.H0pVj56OcEOCNcp-6GEuGXN0IJwtqduyfX9JBMQcBoY",
+						"description": "ricleo",
 						"type": "text",
 						"disabled": true
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer ",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY3NjkzNDkxLCJpYXQiOjE2NjY4Mjk0OTEsImp0aSI6ImFjM2Y2OTU2NzQ2MDQ1ODZhNmFmMDRhYzcxMTIwMjU3IiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJkYW50aGVtYW4iLCJmaXJzdF9uYW1lIjoiRGFuaWVsIn0.wNnR2HxOFfkEAqaCJzyKZ4aClvxj-TkY40PSw28Lr0w",
+						"description": "dan",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"first_name\": \"abc\"\r\n}",
+					"raw": "{\r\n    \"email\": \"ricleo45@yahoo.com\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -224,7 +226,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/add",
+					"raw": "http://127.0.0.1:8000/api/ls",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -235,12 +237,12 @@
 					"port": "8000",
 					"path": [
 						"api",
-						"add"
+						"ls"
 					],
 					"query": [
 						{
 							"key": "Authorization",
-							"value": "Bearer ",
+							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY3MzYyMzA3LCJpYXQiOjE2NjY0OTgzMDcsImp0aSI6ImZkZTM1OWRhZTc1OTQyNjg5YzAzOTY0NTQxYmY4MmJlIiwidXNlcl9pZCI6MywidXNlcm5hbWUiOiJyaWNsZW8iLCJmaXJzdF9uYW1lIjoiUmljYXJkbyJ9.C4S8fblTyitVDShJ5u6Bb5YqT12r23s46f0bFQPSXYs",
 							"disabled": true
 						}
 					]
