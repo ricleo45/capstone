@@ -41,6 +41,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
             first_name=validated_data['first_name'],
             last_name=validated_data['last_name'],
 
+
             # If added new columns through the User model, add them in this
             # create method. Example below:
 

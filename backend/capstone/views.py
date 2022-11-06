@@ -1,26 +1,24 @@
-
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework import status
 from .models import CustomerInfo
-from .serializers import CustomerInfoSerializer
-
-
+from .serializers import CustomerInfoSerializer, CalendarInfoSet
 
 
 @api_view(['GET'])
-@permission_classes([AllowAny])
+@permission_classes([IsAuthenticated])
 def customer_list(request):
     customer = CustomerInfo.objects.all()
-    serializer = CustomerInfoSerializer(customer, many=True)
+    serializer = CalendarInfoSet(customer, many=True)
     return Response(serializer.data)
+
 
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
 def add_new_customer(request):
     print(
-        'User ', f"{request.user.id} {request.user.email} {request.user.username}")
+        'User ', f"{request.user.id} {request.user.email} {request.user.first_name} {request.user.last_name}")
     if request.method == 'POST':
         serializer = CustomerInfoSerializer(data=request.data)
         if serializer.is_valid():
@@ -31,7 +29,3 @@ def add_new_customer(request):
         customer = CustomerInfo.objects.filter(user_id=request.user.id)
         serializer = CustomerInfoSerializer(customer, many=True)
         return Response(serializer.data)
-
-    
-
-
