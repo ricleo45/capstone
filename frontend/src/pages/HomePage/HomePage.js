@@ -34,9 +34,9 @@ const HomePage = () => {
       <br></br>
       {customer.map((customer) => (
           <table key={customer.id}>
-            <tr>
+            
               service type: {customer.service_type}
-              </tr>
+              
             <br></br>
             payment: ${customer.payment_ammount}
             payment type: {customer.payment_form} on {customer.schedule_date} - {customer.transaction_id}
@@ -44,6 +44,7 @@ const HomePage = () => {
         ))}
       
       <Calendar/>
+      
     </div>
   );
 };
