@@ -7,7 +7,7 @@ from .serializers import CustomerInfoSerializer, CalendarInfoSet
 
 
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def customer_list(request):
     customer = CustomerInfo.objects.all()
     serializer = CalendarInfoSet(customer, many=True)

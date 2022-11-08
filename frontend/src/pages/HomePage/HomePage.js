@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
-import PullBookedDates from "../../components/PullBookedDates/PullBookedDates"
+import Calendar from "../../components/DayPicker/Calendar";
 
 
 const HomePage = () => {
@@ -32,17 +32,18 @@ const HomePage = () => {
     <div className="container">
       <h1>Welcome {user.first_name}!</h1>
       <br></br>
-      {customer &&
-        customer.map((customer) => (
+      {customer.map((customer) => (
           <table key={customer.id}>
-            service type: {customer.service_type}
+            <tr>
+              service type: {customer.service_type}
+              </tr>
             <br></br>
             payment: ${customer.payment_ammount}
             payment type: {customer.payment_form} on {customer.schedule_date} - {customer.transaction_id}
           </table>
         ))}
-        <PullBookedDates/>
-        {/* pull bookded dates and console logs them */}
+      
+      <Calendar/>
     </div>
   );
 };

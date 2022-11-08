@@ -7,6 +7,7 @@ import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import PrivateRoute from "./utils/PrivateRoute";
 
+
 function App() {
   return (
     <div>
@@ -16,7 +17,7 @@ function App() {
           path="/"
           element={
             <PrivateRoute>
-              <HomePage />
+              <HomePage/>
             </PrivateRoute>
           }
         />
