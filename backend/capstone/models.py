@@ -1,6 +1,5 @@
 from django.db import models
 from authentication.models import User
-from datetime import datetime, date
 
 
 class CustomerInfo(models.Model):
@@ -11,5 +10,3 @@ class CustomerInfo(models.Model):
     payment_ammount = models.DecimalField(max_digits=5, decimal_places=2)
     service_type = models.CharField(max_length=255)
     transaction_id = models.IntegerField()
-    inventory = models.CharField(max_length=255)
-    payment_sum = models.IntegerField()
